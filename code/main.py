@@ -57,9 +57,9 @@ def main():
 
     results = []
     for i, row in enumerate(rows):
-        issue = row.get("issue", "").strip()
-        subject = row.get("subject", "").strip()
-        company = row.get("company", "None").strip()
+        issue = row.get("Issue", row.get("issue", "")).strip()
+        subject = row.get("Subject", row.get("subject", "")).strip()
+        company = row.get("Company", row.get("company", "None")).strip()
 
         label = subject[:60] if subject else issue[:60]
         print(f"  [{i+1}/{len(rows)}] {label}...")
